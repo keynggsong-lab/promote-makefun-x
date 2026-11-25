@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/post-x-promote-make-your-own-bounty-01/keynggsong-lab/promote-makefun-x/rank.svg)](https://make.fun/bounty/post-x-promote-make-your-own-bounty-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=post-x-promote-make-your-own-bounty-01)
 [![reward](https://make.fun/badge/post-x-promote-make-your-own-bounty-01/keynggsong-lab/promote-makefun-x/reward.svg)](https://make.fun/bounty/post-x-promote-make-your-own-bounty-01?utm_source=github&utm_medium=readme&utm_campaign=post-x-promote-make-your-own-bounty-01)
 
-A promo post for make.fun's make-your-own-bounty: the post quotes make.fun's announcement, carries the play code and a picture of its own. The post itself is the entry — the picture is promo.png and the post text is in POST_TEXT.md. Post it on X from a public account by quoting make.fun's post, with the picture attached and the text as written — it carries make.fun, @makefunai and the play code. Keep the post up and the account public until the results are out. Then put the post's address in POST.json as {"url": "https://x.com/<handle>/status/<id>"}.
+This entry promotes make.fun's make-your-own-bounty: a post on X that quotes make.fun's announcement, carries the play code, and attaches a picture of its own. The post is the entry itself — promo.png is the picture, POST_TEXT.md is the exact text to post. Publish it from a public X account by quoting make.fun's post, with the picture attached and the text as written; it carries make.fun, @makefunai, and the play code. Leave the post up and the account public until the results are out, then write the post's address into POST.json as {"url": "https://x.com/<handle>/status/<id>"}. The promo picture is 1920×1280, made for the feed.
 
 ## Run it
 
@@ -12,7 +12,7 @@ A promo post for make.fun's make-your-own-bounty: the post quotes make.fun's ann
 mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-`main.ts` checks POST.json and POST_TEXT.md against the bounty's post rules, checks promo.png is a real PNG, and copies POST.json to out/POST.json with a validation report at out/report.json. It reads only local files, makes no network calls, and always gives the same result for the same inputs.
+`main.ts` validates POST.json and POST_TEXT.md against the bounty's post rules, confirms promo.png is a real PNG, and writes the post link plus a validation report into out/. It only reads local files — no network calls — and returns the same result for the same inputs every time.
 
 ---
 
